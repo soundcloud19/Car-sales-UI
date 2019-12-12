@@ -28,44 +28,45 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.add_button = new System.Windows.Forms.Button();
+            this.idTextBox = new System.Windows.Forms.TextBox();
+            this.searchButton = new System.Windows.Forms.Button();
+            this.addButton = new System.Windows.Forms.Button();
             this.customerId = new System.Windows.Forms.TextBox();
             this.customerDetails = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.get_button = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.customerDataGridView = new System.Windows.Forms.DataGridView();
+            this.getButton = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.customerDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBox1
+            // idTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(41, 31);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(224, 22);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.idTextBox.Location = new System.Drawing.Point(41, 31);
+            this.idTextBox.Name = "idTextBox";
+            this.idTextBox.Size = new System.Drawing.Size(224, 22);
+            this.idTextBox.TabIndex = 0;
+            this.idTextBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // button1
+            // searchButton
             // 
-            this.button1.Location = new System.Drawing.Point(41, 84);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(224, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Szukaj Id";
-            this.button1.UseVisualStyleBackColor = true;
+            this.searchButton.Location = new System.Drawing.Point(41, 84);
+            this.searchButton.Name = "searchButton";
+            this.searchButton.Size = new System.Drawing.Size(224, 23);
+            this.searchButton.TabIndex = 2;
+            this.searchButton.Text = "Szukaj Id";
+            this.searchButton.UseVisualStyleBackColor = true;
+            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
-            // add_button
+            // addButton
             // 
-            this.add_button.Location = new System.Drawing.Point(497, 131);
-            this.add_button.Name = "add_button";
-            this.add_button.Size = new System.Drawing.Size(224, 23);
-            this.add_button.TabIndex = 3;
-            this.add_button.Text = "Dodaj";
-            this.add_button.UseVisualStyleBackColor = true;
-            this.add_button.Click += new System.EventHandler(this.add_button_Click);
+            this.addButton.Location = new System.Drawing.Point(497, 131);
+            this.addButton.Name = "addButton";
+            this.addButton.Size = new System.Drawing.Size(224, 23);
+            this.addButton.TabIndex = 3;
+            this.addButton.Text = "Dodaj";
+            this.addButton.UseVisualStyleBackColor = true;
+            this.addButton.Click += new System.EventHandler(this.add_button_Click);
             // 
             // customerId
             // 
@@ -80,6 +81,7 @@
             this.customerDetails.Name = "customerDetails";
             this.customerDetails.Size = new System.Drawing.Size(224, 22);
             this.customerDetails.TabIndex = 6;
+            this.customerDetails.TextChanged += new System.EventHandler(this.customerDetails_TextChanged);
             // 
             // label1
             // 
@@ -100,44 +102,44 @@
             this.label2.TabIndex = 9;
             this.label2.Text = "customerDetails";
             // 
-            // dataGridView1
+            // customerDataGridView
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(13, 175);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(998, 375);
-            this.dataGridView1.TabIndex = 10;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.customerDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.customerDataGridView.Location = new System.Drawing.Point(13, 175);
+            this.customerDataGridView.Name = "customerDataGridView";
+            this.customerDataGridView.RowHeadersWidth = 51;
+            this.customerDataGridView.RowTemplate.Height = 24;
+            this.customerDataGridView.Size = new System.Drawing.Size(998, 375);
+            this.customerDataGridView.TabIndex = 10;
+            this.customerDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // get_button
+            // getButton
             // 
-            this.get_button.Location = new System.Drawing.Point(41, 131);
-            this.get_button.Name = "get_button";
-            this.get_button.Size = new System.Drawing.Size(224, 23);
-            this.get_button.TabIndex = 11;
-            this.get_button.Text = "Pobierz dane";
-            this.get_button.UseVisualStyleBackColor = true;
-            this.get_button.Click += new System.EventHandler(this.get_button_Click);
+            this.getButton.Location = new System.Drawing.Point(41, 131);
+            this.getButton.Name = "getButton";
+            this.getButton.Size = new System.Drawing.Size(224, 23);
+            this.getButton.TabIndex = 11;
+            this.getButton.Text = "Pobierz dane";
+            this.getButton.UseVisualStyleBackColor = true;
+            this.getButton.Click += new System.EventHandler(this.get_button_Click);
             // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1023, 562);
-            this.Controls.Add(this.get_button);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.getButton);
+            this.Controls.Add(this.customerDataGridView);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.customerDetails);
             this.Controls.Add(this.customerId);
-            this.Controls.Add(this.add_button);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.addButton);
+            this.Controls.Add(this.searchButton);
+            this.Controls.Add(this.idTextBox);
             this.Name = "AdminForm";
             this.Text = "Admin";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -145,15 +147,15 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button add_button;
+        private System.Windows.Forms.TextBox idTextBox;
+        private System.Windows.Forms.Button searchButton;
+        private System.Windows.Forms.Button addButton;
         private System.Windows.Forms.TextBox customerId;
         private System.Windows.Forms.TextBox customerDetails;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button get_button;
+        private System.Windows.Forms.DataGridView customerDataGridView;
+        private System.Windows.Forms.Button getButton;
     }
 }
 

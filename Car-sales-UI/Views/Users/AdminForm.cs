@@ -46,7 +46,10 @@ namespace Car_sales_UI
 
         private void add_button_Click(object sender, EventArgs e)
         {
-            
+            Customer customer = new Customer() {CustomerId = Convert.ToInt64(customerId.Text), CustomerDetails = customerDetails.Text};
+            HttpClient client = new HttpClient();
+            client.BaseAddress = new Uri("https://localhost:44341/");
+            HttpResponseMessage response = client.PostAsJsonAsync("api/customers/", customer).Result; 
         }
 
         private void customerDetails_TextChanged(object sender, EventArgs e)

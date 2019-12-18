@@ -30,7 +30,7 @@ namespace Car_sales_UI
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+          
         }
 
         private void get_button_Click(object sender, EventArgs e)
@@ -61,11 +61,19 @@ namespace Car_sales_UI
         {
             HttpClient client = new HttpClient();
             client.BaseAddress = new Uri("https://localhost:44341/");
+            client.DefaultRequestHeaders.Accept.Clear();
             HttpResponseMessage response = client.GetAsync("api/customers/"+idTextBox.Text).Result;
             Customer customer = response.Content.ReadAsAsync<Customer>().Result;
             List<Customer> customerList = new List<Customer>();
             customerList.Add(customer);
             customerDataGridView.DataSource = customerList;
+        }
+
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+            HttpClient client = new HttpClient();
+            client.BaseAddress = new Uri("https://localhost:44341/");
+            HttpResponseMessage response = client.DeleteAsync("api/customers/"+customerId.Text).Result;
         }
     }
 }

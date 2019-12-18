@@ -37,6 +37,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.customerDataGridView = new System.Windows.Forms.DataGridView();
             this.getButton = new System.Windows.Forms.Button();
+            this.deleteButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.customerDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -123,11 +124,22 @@
             this.getButton.UseVisualStyleBackColor = true;
             this.getButton.Click += new System.EventHandler(this.get_button_Click);
             // 
+            // deleteButton
+            // 
+            this.deleteButton.Location = new System.Drawing.Point(760, 30);
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.Size = new System.Drawing.Size(224, 23);
+            this.deleteButton.TabIndex = 12;
+            this.deleteButton.Text = "Usuń";
+            this.deleteButton.UseVisualStyleBackColor = true;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
+            // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1023, 562);
+            this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.getButton);
             this.Controls.Add(this.customerDataGridView);
             this.Controls.Add(this.label2);
@@ -156,6 +168,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView customerDataGridView;
         private System.Windows.Forms.Button getButton;
+        private System.Windows.Forms.Button deleteButton;
     }
 }
 

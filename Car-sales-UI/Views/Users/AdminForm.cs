@@ -75,5 +75,16 @@ namespace Car_sales_UI
             client.BaseAddress = new Uri("https://localhost:44341/");
             HttpResponseMessage response = client.DeleteAsync("api/customers/"+customerId.Text).Result;
         }
+
+        private void updateButton_Click(object sender, EventArgs e)
+        {
+            Customer customer = new Customer() { CustomerId = Convert.ToInt64(customerId.Text), CustomerDetails = customerDetails.Text };
+            HttpClient client = new HttpClient();
+            client.BaseAddress = new Uri("https://localhost:44341/");
+            HttpResponseMessage response = client.PutAsJsonAsync("api/customers/", customer).Result;
+            //HttpClient client = new HttpClient();
+            //client.BaseAddress = new Uri("https://localhost:44341/");
+            //HttpResponseMessage response = client.("api/customers/").Result;
+        }
     }
 }

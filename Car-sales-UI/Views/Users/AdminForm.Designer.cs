@@ -38,6 +38,7 @@
             this.customerDataGridView = new System.Windows.Forms.DataGridView();
             this.getButton = new System.Windows.Forms.Button();
             this.deleteButton = new System.Windows.Forms.Button();
+            this.updateButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.customerDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -134,11 +135,22 @@
             this.deleteButton.UseVisualStyleBackColor = true;
             this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
+            // updateButton
+            // 
+            this.updateButton.Location = new System.Drawing.Point(760, 87);
+            this.updateButton.Name = "updateButton";
+            this.updateButton.Size = new System.Drawing.Size(224, 23);
+            this.updateButton.TabIndex = 13;
+            this.updateButton.Text = "Edytuj";
+            this.updateButton.UseVisualStyleBackColor = true;
+            this.updateButton.Click += new System.EventHandler(this.updateButton_Click);
+            // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1023, 562);
+            this.Controls.Add(this.updateButton);
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.getButton);
             this.Controls.Add(this.customerDataGridView);
@@ -169,6 +181,7 @@
         private System.Windows.Forms.DataGridView customerDataGridView;
         private System.Windows.Forms.Button getButton;
         private System.Windows.Forms.Button deleteButton;
+        private System.Windows.Forms.Button updateButton;
     }
 }
 

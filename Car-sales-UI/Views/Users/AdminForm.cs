@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net.Http;
+using System.Net.Http.Headers;
 
 namespace Car_sales_UI
 {
@@ -30,18 +31,24 @@ namespace Car_sales_UI
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-          
+            //var id = customerDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString();
+            //var customer = db.Customer.Find(id);
+
+
+
         }
 
-        private void get_button_Click(object sender, EventArgs e)
+        private async void get_button_Click(object sender, EventArgs e)
         {
-            using (HttpClient client = new HttpClient())
-            {
-                client.BaseAddress = new Uri("https://localhost:44341/");
-                HttpResponseMessage response = client.GetAsync("api/customers/").Result;
-                var customer = response.Content.ReadAsAsync<IEnumerable<Customer>>().Result;
-                customerDataGridView.DataSource = customer;
-            }
+            //using (HttpClient client = new HttpClient())
+            //{
+            //    client.BaseAddress = new Uri("https://localhost:44341/");
+            //    HttpResponseMessage response = client.GetAsync("api/customers/").Result;
+            //    var customer = response.Content.ReadAsAsync<IEnumerable<Customer>>().Result;
+            //    customerDataGridView.DataSource = customer;
+            //}
+            var response = await RestHelper.GetALL();
+            textBox1.Text = response;
         }
 
         private void add_button_Click(object sender, EventArgs e)
@@ -78,13 +85,28 @@ namespace Car_sales_UI
 
         private void updateButton_Click(object sender, EventArgs e)
         {
-            Customer customer = new Customer() { CustomerId = Convert.ToInt64(customerId.Text), CustomerDetails = customerDetails.Text };
-            HttpClient client = new HttpClient();
-            client.BaseAddress = new Uri("https://localhost:44341/");
-            HttpResponseMessage response = client.PutAsJsonAsync("api/customers/", customer).Result;
+
+            //Customer customer = new Customer() { CustomerId = Convert.ToInt64(customerId.Text), CustomerDetails = customerDetails.Text };
+            //HttpClient client = new HttpClient();
+            //client.BaseAddress = new Uri("https://localhost:44341/");
+            //HttpResponseMessage response = client.PutAsJsonAsync("api/customers/", customer).Result;
             //HttpClient client = new HttpClient();
             //client.BaseAddress = new Uri("https://localhost:44341/");
             //HttpResponseMessage response = client.("api/customers/").Result;
+            //HttpClient client = new HttpClient();
+            //client.BaseAddress = new Uri("http://localhost:44341/");
+            //client.DefaultRequestHeaders.Accept.Clear();
+            //client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            //HttpResponseMessage response = client.PostAsJsonAsync("api/customers/").Result;
+            //Customer customer = new Customer() { CustomerId = Convert.ToInt64(customerId.Text), CustomerDetails = customerDetails.Text };
+            //HttpResponseMessage responsePutMethod = ClientPutRequest("api/customers/" + customer);
+            //responsePutMethod.EnsureSuccessStatusCode();
+
+        }
+
+        private void textBox1_TextChanged_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

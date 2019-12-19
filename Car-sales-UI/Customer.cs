@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Car_sales_UI
 {
-    class Customer
+    public class Customer
     {
         public long CustomerId { get; set; }
         //[Required]
@@ -15,3 +15,8 @@ namespace Car_sales_UI
         //public List<Sale> Sale { get; set; }
     }
 }
+
+
+
+
+

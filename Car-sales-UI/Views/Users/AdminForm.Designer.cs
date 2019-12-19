@@ -39,6 +39,7 @@
             this.getButton = new System.Windows.Forms.Button();
             this.deleteButton = new System.Windows.Forms.Button();
             this.updateButton = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.customerDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -107,11 +108,11 @@
             // customerDataGridView
             // 
             this.customerDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.customerDataGridView.Location = new System.Drawing.Point(13, 175);
+            this.customerDataGridView.Location = new System.Drawing.Point(13, 335);
             this.customerDataGridView.Name = "customerDataGridView";
             this.customerDataGridView.RowHeadersWidth = 51;
             this.customerDataGridView.RowTemplate.Height = 24;
-            this.customerDataGridView.Size = new System.Drawing.Size(998, 375);
+            this.customerDataGridView.Size = new System.Drawing.Size(875, 215);
             this.customerDataGridView.TabIndex = 10;
             this.customerDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -145,11 +146,20 @@
             this.updateButton.UseVisualStyleBackColor = true;
             this.updateButton.Click += new System.EventHandler(this.updateButton_Click);
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(52, 242);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(708, 22);
+            this.textBox1.TabIndex = 14;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
+            // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1023, 562);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.updateButton);
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.getButton);
@@ -182,6 +192,7 @@
         private System.Windows.Forms.Button getButton;
         private System.Windows.Forms.Button deleteButton;
         private System.Windows.Forms.Button updateButton;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 

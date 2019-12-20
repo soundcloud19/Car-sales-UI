@@ -31,11 +31,8 @@ namespace Car_sales_UI
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            //var id = customerDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString();
-            //var customer = db.Customer.Find(id);
-
-
-
+            var id = customerDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString();
+            MessageBox.Show(id);
         }
 
         private async void get_button_Click(object sender, EventArgs e)

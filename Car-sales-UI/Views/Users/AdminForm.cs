@@ -37,15 +37,15 @@ namespace Car_sales_UI
 
         private async void get_button_Click(object sender, EventArgs e)
         {
-            //using (HttpClient client = new HttpClient())
-            //{
-            //    client.BaseAddress = new Uri("https://localhost:44341/");
-            //    HttpResponseMessage response = client.GetAsync("api/customers/").Result;
-            //    var customer = response.Content.ReadAsAsync<IEnumerable<Customer>>().Result;
-            //    customerDataGridView.DataSource = customer;
-            //}
-            var response = await RestHelper.GetALL();
-            textBox1.Text = response;
+            using (HttpClient client = new HttpClient())
+            {
+                client.BaseAddress = new Uri("https://localhost:44341/");
+                HttpResponseMessage response = client.GetAsync("api/customers/").Result;
+                var customer = response.Content.ReadAsAsync<IEnumerable<Customer>>().Result;
+                customerDataGridView.DataSource = customer;
+            }
+            //var response = await RestHelper.GetALL();
+            //textBox1.Text = response;
         }
 
         private void add_button_Click(object sender, EventArgs e)
